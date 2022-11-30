@@ -3,6 +3,11 @@ import java.text.*;
 import java.util.*;
 public class StudentList {
 	public static void main(String[] args) {
+		if(args.length!=1){
+			System.out.println("invalid argument.");
+			System.out.println("exiting Program.");
+			return;
+		}
 
 //		Check arguments
 		if(args[0].equals("a")) {
@@ -69,8 +74,7 @@ public class StudentList {
 			}
 			System.out.println("Data Loaded.");				
 		}
-		else if(args[0].contains("c")) 
-		{
+		else if(args[0].contains("c")) {
 			System.out.println("Loading data ...");			
 			try {
 				BufferedReader s = new BufferedReader(new InputStreamReader(new FileInputStream("students.txt")));
@@ -94,6 +98,11 @@ public class StudentList {
 			catch (Exception e){
 			}
 			System.out.println("Data Loaded.");				
+		}
+		else {
+			System.out.println("invalid argument.");
+			System.out.println("exiting Program.");
+			return;
 		}
 	}
 }
