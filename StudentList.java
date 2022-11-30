@@ -13,13 +13,13 @@ public class StudentList {
 		if(args[0].equals("a")) {
 			System.out.println("Loading data ...");			
 			try {
-				BufferedReader s = new BufferedReader(
+				BufferedReader bufferedReader = new BufferedReader(
 					new InputStreamReader(
 							new FileInputStream("students.txt"))); 
-				String r = s.readLine();
-				String i[] = r.split(",");
-				for(String j : i) {
-					System.out.println(j);
+				String words = bufferedReader.readLine();
+				String word[] = words.split(",");
+				for(String word_to_show  : word) {
+					System.out.println(word_to_show);
 				}
 			} catch (Exception e){
 			}
@@ -28,13 +28,13 @@ public class StudentList {
 		else if(args[0].equals("r")) {
 			System.out.println("Loading data ...");			
 			try {
-				BufferedReader s = new BufferedReader(new InputStreamReader(new FileInputStream("students.txt")));
-				String r = s.readLine();
-				System.out.println(r);
-				String i[] = r.split(",");
-				Random x = new Random();
-				int y = x.nextInt();
-				System.out.println(i[y]);
+				BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream("students.txt")));
+				String all_words_in_stirng = bufferedReader.readLine();
+				//System.out.println(all_words_in_stirng);
+				String words[] = all_words_in_stirng.split(",");
+				Random random = new Random();
+				int random_integer = random.nextInt(words.length);
+				System.out.println(words[random_integer]);
 			} catch (Exception e){
 			}
 			System.out.println("Data Loaded.");			
